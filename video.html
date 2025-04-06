@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Conejo</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                background-color: #f7f3f2; /* Blanco hueso - Fondo principal */
+                color: #333; /* Gris oscuro para el texto principal */
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header {
+                position: relative; /* Para posicionar stickers dentro */
+                background-color: #e8e1de; /* Beige claro - Fondo del encabezado */
+                padding: 20px 0;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                color: #7a444b; /* Rosa terracota - Título principal */
+                margin-bottom: 10px;
+                font-size: 2.2em; /* Ajuste de tamaño */
+            }
+
+            nav {
+                width: 100%;
+                text-align: center;
+            }
+
+            .container {
+                width: 49%; /* Ajustado para mejor visualización */
+                margin: 20px auto;
+                background-color: #ffffff; /* Blanco para el contenedor de enlaces */
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .container a {
+                color: #7a444b; /* Rosa terracota - Enlaces */
+                text-decoration: none;
+                font-size: 16px;
+                padding: 8px 15px;
+                border-radius: 5px;
+                transition: border-bottom 0.3s ease; /* Transición suave para el indicador */
+            }
+
+            .container a:hover {
+                /* Puedes mantener este efecto o quitarlo si prefieres solo el indicador activo */
+                background-color: #fbdcd4; /* Rosa pálido - Fondo al pasar el ratón */
+            }
+
+            .container a.active { /* Clase para el enlace activo */
+                border-bottom: 2px solid #fbdcd4; /* Indicador inferior rosa pálido */
+                padding-bottom: 6px; /* Ajustar el padding para que se vea bien */
+            }
+
+            .recuadro {
+                position: relative; /* Para posicionar stickers dentro */
+                width: 90%; /* Ajustado para consistencia */
+                margin: 20px auto;
+                background-color: rgba(255, 255, 255, 0.8); /* Blanco con transparencia */
+                padding: 20px;
+                border: 1px solid #e0d8d5; /* Borde sutil */
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                justify-content: center;
+            }
+
+            footer {
+                position: relative; /* Para posicionar stickers dentro */
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            .container-pie {
+                width: 30%;
+                margin: 0 auto;
+                background-color: #e8e1de;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            }
+
+            .container-pie p {
+                font-size: 0.9em;
+                color: #777; /* Gris más claro */
+                margin-bottom: 0;
+            }
+
+            .conejo {
+                width: 100%; /* Ajusta el ancho del video */
+                height: auto; /* Ajusta el alto del video */
+                border: 1px solid #ccc; /* Ajusta el borde del video */
+                border-radius: 10px; /* Ajusta la curvatura del borde del video */
+                }
+
+            .sticker {
+                width: 25px; /* Tamaño pequeño y visible */
+                height: auto;
+                opacity: 0.7; /* Un poco transparente */
+                pointer-events: none; /* No interfiere con clics */
+                position: absolute;
+                z-index: 1;
+            }
+
+            /* Ubicaciones de ejemplo de los stickers */
+            .sticker-header-top-right {
+                top: 100px; /* Ajusta la posición vertical */
+                right: 100px; /* Ajusta la posición horizontal */
+                }
+
+            .sticker-header-bottom-left {
+                bottom: 10px;
+                left: 15px;
+            }
+
+            .sticker-recuadro-top-left {
+                top: 0px;
+                left: 15px;
+            }
+
+            .sticker-recuadro-bottom-right {
+                bottom: 10px;
+                right: 20px;
+            }
+
+            .sticker-footer-top-right {
+                top: 5px;
+                right: 20%; /* Un poco más adentro */
+            }
+
+            .sticker-footer-bottom-left {
+                bottom: 10px;
+                left: 20%; /* Un poco más adentro */
+            }
+
+            /* Estilos para pantallas pequeñas */
+            @media (max-width: 600px) {
+                .container {
+                    width: 90%;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .container a {
+                    width: 80%;
+                    text-align: center;
+                    padding: 10px;
+                    font-size: 18px;
+                }
+                .recuadro {
+                    width: 95%;
+                }
+                header h1 {
+                    font-size: 1.8em;
+                }
+                .container-pie {
+                    width: 80%;
+                }
+                .sticker {
+                    width: 20px; /* Ajustar tamaño en pantallas pequeñas */
+                }
+                .sticker-footer-bottom-left, .sticker-footer-top-right {
+                    left: 10%;
+                    right: 10%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Conejo</h1>
+            <img src="img/img4.png" alt="" class="sticker sticker-header-bottom-left">
+            <img src="img/img1.png" alt="" class="sticker sticker-header-top-right">
+            <nav>
+                <div class="container">
+                    <a href="index.html">Inicio</a>
+                    <a href="foto.html">Ver Foto</a>
+                    <a href="video.html" class="active">Ver Video</a>
+                    <a href="descripcion.html">Descripción</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="recuadro">
+                <img src="img/img2.png" alt="" class="sticker sticker-recuadro-top-left">
+                <img src="img/img5.png" alt="" class="sticker sticker-recuadro-bottom-right">
+                <article>
+                    <video src="video/conejo.mp4" alt="conejo" class="conejo" controls>
+                        Tu navegador no soporta la etiqueta de video.
+                      </video>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <div class="container-pie">
+                <img src="img/img6.png" alt="" class="sticker sticker-footer-top-right">
+                <p>Realizado por Paola Contreras. C.I: 31.750.087. 2025</p>
+                <img src="img/img3.png" alt="" class="sticker sticker-footer-bottom-left">
+            </div>
+        </footer>
+    </body>
+</html>
